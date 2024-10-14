@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoVault</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="aa.css">
+</head>
+<body class="light-theme">
+    <div class="container">
+        <aside class="sidebar">
+            <button id="toggle-sidebar" class="toggle-sidebar">▶</button>
+            <div id="sidebar-content">
+                <button id="create-folder">Создать папку</button>
+                <button id="create-note">Создать новую заметку</button>
+                <button id="create-note-with-date">Создать заметку с сегодняшней датой</button>
+                <button id="search-file">Поиск</button>
+                <button id="toggle-theme">Переключить тему</button> 
+                <ul id="folder-list"></ul>
+            </div>
+        </aside>
+        <main class="main-content">
+            <div class="tab-bar" id="tab-bar">
+                <button class="add-tab" id="add-tab">+ Добавить вкладку</button>
+            </div>
+            <div class="content-area" id="content-area">
+                <p>Ни один файл не открыт</p>
+            </div>
+        </main>
+    </div>
+    <script src="aa.js"></script>
+</body>
+</html>

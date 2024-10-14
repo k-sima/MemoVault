@@ -1,0 +1,90 @@
+<!DOCTYPE html>  
+<html lang="ru">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Войти в аккаунт</title>  
+    <link rel="icon" href="favicon.ico">
+    <style>  
+        body {  
+            background-color: #1C1C1C;  
+            font-family: Arial, sans-serif;  
+            color: white;  
+            text-align: center;  
+            height: 100vh;  
+            margin: 0;  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+        }  
+        .container {  
+            width: 350px;  
+            background-color: rgba(44, 44, 44, 0.8); 
+            padding: 30px;  
+            border-radius: 10px;  
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
+        }  
+        .logo {  
+            margin-bottom: 30px;  
+            border-radius: 10px;  
+            margin: 1px 0 1px;
+        }  
+        .form-input {  
+            margin-bottom: 15px;  
+        }  
+        .form-input input {  
+            width: calc(100% - 22px);  
+            padding: 10px;  
+            border-radius: 5px;  
+            border: 1px solid #444;  
+            background-color: #3C3C3C;  
+            color: white;  
+        }  
+        .form-button {  
+            width: 100%;  
+            padding: 10px;  
+            background-color: #6E44FF;  
+            border: none;  
+            color: white;  
+            border-radius: 5px;  
+            cursor: pointer;  
+            margin-top: 10px;  
+        }  
+        .form-button:hover {  
+            background-color: #5C39CC;  
+        }  
+        .login-link, .forgot-password {  
+            color: #6E44FF;  
+            text-decoration: none;  
+        }  
+        .login-link:hover, .forgot-password:hover {  
+            text-decoration: underline;  
+        }  
+        .forgot-password {  
+            font-size: 0.9em;  
+            float: right;  
+            margin-top: 10px;   
+        }  
+        .login-text {  
+            font-size: 0.9em;  
+            color: #AAAAAA;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <img class="logo" src="E:\для Владимира Романовича/logo.png" alt="Logo" width="150" height="150" style="border-radius:10px;">  
+        <h2>Войдите в свою учетную запись</h2>  
+        <form action="dashboard.html" method="post">  
+            <div class="form-input">  
+                <input type="email" name="email" placeholder="Электронная почта" required>  
+            </div>  
+            <div class="form-input">  
+                <input type="password" name="password" placeholder="Пароль" required>  
+            </div>  
+            <button type="submit" class="form-button">Вход</button>  
+        </form>  
+        <p class="login-text">Нет аккаунта? <a href="account.html" class="login-link">Создать аккаунт</a></p>  
+    </div>  
+</body>  
+</html>
