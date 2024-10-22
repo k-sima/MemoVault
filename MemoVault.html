@@ -1,34 +1,87 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MemoVault</title>
+    <link rel="stylesheet" href="MemoVault.css">
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="aa.css">
 </head>
+
 <body class="light-theme">
     <div class="container">
         <aside class="sidebar">
             <button id="toggle-sidebar" class="toggle-sidebar">▶</button>
             <div id="sidebar-content">
-                <button id="create-folder">Создать папку</button>
-                <button id="create-note">Создать новую заметку</button>
-                <button id="create-note-with-date">Создать заметку с сегодняшней датой</button>
-                <button id="search-file">Поиск</button>
-                <button id="toggle-theme">Переключить тему</button> 
+                <button id="create-folder">Создать папку📁</button>
+                <button id="create-note">Создать заметку в папке📝</button>
+                <button id="create-note-outside">Создать заметку вне папки📝</button>
+                <button id="create-note-with-date">Создать заметку с сегодняшней датой📆</button>
+                <button id="search-file">Поиск🔎</button>
+                <button id="toggle-theme">Переключить тему🌚/🌝</button>
                 <ul id="folder-list"></ul>
             </div>
         </aside>
         <main class="main-content">
             <div class="tab-bar" id="tab-bar">
-                <button class="add-tab" id="add-tab">+ Добавить вкладку</button>
             </div>
             <div class="content-area" id="content-area">
-                <p>Ни один файл не открыт</p>
+                <p>Создай папку или заметку!</p>
             </div>
         </main>
     </div>
-    <script src="aa.js"></script>
+
+    <div class="user-icon" id="user-icon">
+        <img src="programmer.png" alt="programmer">
+    </div>
+
+    <div class="user-menu" id="user-menu" style="display: none;">
+        <p id="username-display"></p>
+        <button id="settings-button">Настройки⚙</button>
+        <button id="logout-button">Выйти🚶</button>
+    </div>
+
+    <div class="modal" id="settings-modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Настройки пользователя</h2>
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" value="" readonly>
+            <button id="edit-username-button">Изменить имя</button>
+            <label for="email">Почта:</label>
+            <input type="email" id="email" value="" readonly>
+            <button id="edit-email-button">Изменить почту</button>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" value="" readonly>
+            <button id="edit-password-button">Изменить пароль</button>
+            <button id="close-settings">❌Закрыть❌</button>
+        </div>
+    </div>
+
+    <div class="modal" id="password-modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Изменить пароль</h2>
+            <label for="old-password">Старый пароль:</label>
+            <input type="password" id="old-password">
+            <label for="new-password">Новый пароль:</label>
+            <input type="password" id="new-password">
+            <label for="confirm-new-password">Подтвердите новый пароль:</label>
+            <input type="password" id="confirm-new-password">
+            <button id="confirm-password-change">Подтвердить</button>
+            <button id="close-password-modal">Отмена</button>
+        </div>
+    </div>
+    <div class="modal" id="context-menu" style="display: none;">
+        <div class="modal-content">
+            <h2>Контекстное меню</h2>
+            <button id="edit-item">Редактировать</button>
+            <button id="delete-item">Удалить</button>
+            <button id="close-context-menu">Закрыть</button>
+        </div>
+    </div>
+    
+
+    <script src="MemoVault.js"></script>
 </body>
+
 </html>
