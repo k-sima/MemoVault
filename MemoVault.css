@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.light-theme {
+    --background-color: white;
+    --text-color: black;
+    --sidebar-bg-color: #f1f1f1;
+    --button-bg-color: #7b61ff;
+    --button-hover-bg-color: #6a53d1;
+}
+
+.dark-theme {
+    --background-color: #2c2c2c;
+    --text-color: white;
+    --sidebar-bg-color: #333;
+    --button-bg-color: #7b61ff;
+    --button-hover-bg-color: #6a53d1;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+
+.sidebar {
+    background-color: var(--sidebar-bg-color);
+    width: 250px;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.sidebar.collapsed {
+    width: 50px;
+}
+
+.sidebar.collapsed #sidebar-content {
+    display: none;
+}
+
+.sidebar .collapse-button {
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--button-bg-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.sidebar button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+#folder-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#folder-list li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-bar {
+	min-height: 50px;
+    display: flex;
+    background-color: var(--sidebar-bg-color);
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.tab {
+    background-color: #fff;
+    border: none; 
+    padding: 10px 20px;
+    margin-right: 5px;
+    position: relative;
+    border-radius: 8px;
+}
+
+.tab.active {
+    border: 2px solid var(--button-bg-color);
+}
+
+.tab p {
+    display: inline;
+    margin-right: 10px;
+    color: black;
+}
+
+.tab button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+}
+
+.add-tab {
+    background-color: var(--button-bg-color);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.add-tab:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.content-area textarea {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.content-area p {
+    font-size: 24px;
+    color: grey;
+    text-align: center;
+    margin: auto;
+}
+
+.user-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.user-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 150px;
+    z-index: 100;
+}
+
+.user-menu p, .user-menu button {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.user-menu button {
+    margin-bottom: 5px;
+}
+
+.user-menu button:hover {
+    background-color: #f1f1f1;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-content input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#settings-modal .modal-content button,
+#password-modal .modal-content button {
+    margin-bottom: 10px;
+}
+
+
+#settings-modal .modal-content button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.user-menu button + button {
+    margin-top: 5px;
+}
+
+#password-modal .modal-content input {
+    margin-bottom: 10px;
+    width: calc(100% - 20px);
+}
+
+
+.toggle-sidebar {
+    position: absolute;
+    padding: 0 !important;
+    right: -15px;
+    top: 50%;
+    width: 30px !important;
+    height: 30px;
+    border-left: 15px solid black;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
